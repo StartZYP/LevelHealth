@@ -18,25 +18,21 @@ public class LevelHealth extends JavaPlugin implements Listener {
     @EventHandler
     public void PlayerLevel(PlayerLevelChangeEvent event){
         event.getPlayer().setMaxHealth(20+event.getNewLevel()*Health);
-        event.getPlayer().setHealthScale(20);
         event.getPlayer().sendMessage(Msg);
     }
 
     @EventHandler
     public void PlayerChangeWorld(PlayerChangedWorldEvent event){
         event.getPlayer().setMaxHealth(20+event.getPlayer().getLevel()*Health);
-        event.getPlayer().setHealthScale(20);
     }
     @EventHandler
     public void PlayerJoinGame(PlayerJoinEvent event){
         event.getPlayer().setMaxHealth(20+event.getPlayer().getLevel()*Health);
-        event.getPlayer().setHealthScale(20);
     }
 
     @EventHandler
     public void PlayerDeath(PlayerDeathEvent event){
         event.getEntity().setMaxHealth(20+event.getEntity().getLevel()*Health);
-        event.getEntity().setHealthScale(20);
     }
 
     @Override
